@@ -4,14 +4,14 @@ A comprehensive demonstration of new React 19 features built with Next.js 16, sh
 
 ## 🚀 Features Demonstrated
 
-### 1. **Suspense + use() Hook Demo** (`/data`)
+### 1. **Suspense + use() Hook Demo** (`/suspense`)
 Learn how React 19's `<Suspense />` component and the new `use()` hook work together for elegant async data fetching:
 - Server-side data fetching from PostgreSQL database
 - Automatic loading states with fallback UI (skeleton screens)
 - Smooth transitions when data loads
 - Built with Server Actions for database operations
 
-### 2. **Activity Component Demo** (`/tabs`)
+### 2. **Activity Component Demo** (`/activity`)
 Explore the new `<Activity />` component that revolutionizes how React handles loading and transition states:
 - **With `<Activity />`**: Preserves component state and input focus during tab switches - no unmounting/remounting
 - **Without `<Activity />`**: Traditional conditional rendering that loses state on navigation
@@ -32,21 +32,21 @@ Explore the new `<Activity />` component that revolutionizes how React handles l
 ```
 react19.2/
 ├── app/
-│   ├── page.tsx           # Home page with feature links
-│   ├── data/page.tsx      # Suspense + use() demo
-│   └── tabs/page.tsx      # Activity component demo
+│   ├── page.tsx              # Home page with feature links
+│   ├── suspense/page.tsx     # Suspense + use() demo
+│   └── activity/page.tsx     # Activity component demo
 ├── components/
-│   ├── data-content.tsx   # Data fetching component with use()
+│   ├── data-content.tsx      # Data fetching component with use()
 │   ├── tabs/
 │   │   ├── tab-activity.tsx      # Demo with <Activity />
 │   │   └── tab-no-activity.tsx   # Demo without <Activity />
-│   └── ui/                # shadcn/ui components
+│   └── ui/                   # shadcn/ui components
 ├── actions/
-│   └── posts.ts           # Server Actions for database operations
+│   └── posts.ts              # Server Actions for database operations
 ├── db/
-│   ├── index.ts           # Database connection
-│   └── schema.ts          # Drizzle schema definitions
-└── drizzle.config.ts      # Drizzle ORM configuration
+│   ├── index.ts              # Database connection
+│   └── schema.ts             # Drizzle schema definitions
+└── drizzle.config.ts         # Drizzle ORM configuration
 ```
 
 ## 🏁 Getting Started
@@ -109,12 +109,12 @@ react19.2/
 
 ## 🎯 What to Try
 
-1. **Suspense Demo** (`/data`):
+1. **Suspense Demo** (`/suspense`):
    - Watch the skeleton loading states
    - See how data streams in from the database
    - Observe smooth transitions with Suspense boundaries
 
-2. **Activity Demo** (`/tabs`):
+2. **Activity Demo** (`/activity`):
    - Type in the search input on the first tab
    - Switch between tabs
    - Compare how the WITH `<Activity />` version preserves your input focus

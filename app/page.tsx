@@ -22,7 +22,7 @@ export default function Home() {
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             See how <code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-sm">&lt;Suspense /&gt;</code> and the <code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-sm">use()</code> hook work together to handle async data fetching with loading states.
           </p>
-          <Link href="/data">
+          <Link href="/suspense">
             <Button variant="default" className="w-full">
               View Suspense Demo
             </Button>
@@ -37,7 +37,7 @@ export default function Home() {
           <p className="text-gray-600 dark:text-gray-400 mb-4">
             Explore the new <code className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded text-sm">&lt;Activity /&gt;</code> component that manages loading and transition states for better UX in React 19.
           </p>
-          <Link href="/tabs">
+          <Link href="/activity">
             <Button variant="outline" className="w-full">
               View {`<Activity />`} Demo
             </Button>
