@@ -1,11 +1,11 @@
-import DataContent from "@/components/data-content";
-import DataForm from "@/components/data-form";
+import DataContent from "@/components/content";
+import DataForm from "@/components/form";
 import { Button } from "@/components/ui/button";
 import db from "@/db";
 import { posts } from "@/db/schema";
 import { desc } from "drizzle-orm";
 import Link from "next/link";
-import { cache, Suspense } from "react";
+import { Suspense } from "react";
 
 export default function DataPage() {
     const postsPromise = getPosts();
@@ -16,8 +16,7 @@ export default function DataPage() {
             <DataForm />
             <div className="border-t border-gray-200 dark:border-gray-700 pt-6">
                 <h2 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-4">Recent Posts</h2>
-                <Suspense fallback={<PostsSkeleton />}
-                >
+                <Suspense fallback={<PostsSkeleton />}>
                     <DataContent postsPromise={postsPromise} />
                 </Suspense>
             </div>
@@ -25,10 +24,10 @@ export default function DataPage() {
     );
 }
 
-const getPosts = cache(async () => {
+const getPosts = async () => {
     const postsData = await db.select().from(posts).orderBy(desc(posts.createdAt)).limit(10);
     return { success: true, data: postsData };
-});
+};
 
 
 const PostsSkeleton = () => {
