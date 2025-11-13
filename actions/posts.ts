@@ -23,6 +23,13 @@ export async function createPost(prevState: { error?: string } | null, formData:
 }
 
 export async function deletePost(id: number) {
+    await new Promise(resolve => setTimeout(resolve, 1000));
     await db.delete(posts).where(eq(posts.id, id));
     revalidatePath('/suspense');
 }
+
+export async function getPosts() {
+    const postsData = await db.select().from(posts).orderBy(desc(posts.createdAt)).limit(10);
+    return { success: true, data: postsData };
+};
+

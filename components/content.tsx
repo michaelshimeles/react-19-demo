@@ -12,12 +12,12 @@ type Post = {
 }
 
 export default function DataContent({ postsPromise }: { postsPromise: Promise<any> }) {
-    const response = use(postsPromise);
+    const { data } = use(postsPromise);
     const [isPending, startTransition] = useTransition();
-    
+
     // Optimistic state management
     const [optimisticPosts, removeOptimisticPost] = useOptimistic(
-        response.data,
+        data,
         (state: Post[], deletedId: number) => state.filter(post => post.id !== deletedId)
     );
 
@@ -33,8 +33,8 @@ export default function DataContent({ postsPromise }: { postsPromise: Promise<an
     return (
         <div className="flex flex-col gap-4">
             {optimisticPosts.map((post: Post) => (
-                <div 
-                    className="flex flex-col gap-2 border-2 border-gray-300 rounded-md p-4" 
+                <div
+                    className={isPending ? "flex flex-col gap-2 border-2 border-gray-300 rounded-md p-4 opacity-50 cursor-not-allowed" : "flex flex-col gap-2 border-2 border-gray-300 rounded-md p-4"}
                     key={post.id}
                 >
                     <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100">{post.title}</h2>
@@ -47,6 +47,7 @@ export default function DataContent({ postsPromise }: { postsPromise: Promise<an
                     >
                         <TrashIcon className="w-4 h-4" />
                     </Button>
+
                 </div>
             ))}
         </div>
