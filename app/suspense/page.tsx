@@ -7,6 +7,8 @@ import { desc } from "drizzle-orm";
 import Link from "next/link";
 import { cache, Suspense } from "react";
 
+export const dynamic = "force-dynamic";
+
 export default function DataPage() {
     const postsPromise = getPosts();
 
