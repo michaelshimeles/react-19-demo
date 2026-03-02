@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import DataContent from "@/components/content";
 import DataForm from "@/components/form";
 import { Button } from "@/components/ui/button";
