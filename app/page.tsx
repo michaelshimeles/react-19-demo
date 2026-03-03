@@ -7,10 +7,10 @@ export default function Home() {
       {/* Hero Section */}
       <div className="text-center mt-12 mb-4">
         <div className="inline-block px-4 py-2 bg-blue-100 dark:bg-blue-900/30 rounded-full mb-4">
-          <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Interactive Tutorial</span>
+          <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Interactive Session</span>
         </div>
         <h1 className="text-5xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-          Learn React 19
+          Master React NOW
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
           Master the latest features in React 19 through interactive demos and real-world examples
